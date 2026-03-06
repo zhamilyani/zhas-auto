@@ -66,7 +66,7 @@ window.addEventListener('scroll', () => {
   const gravity = 0.06;
   const friction = 0.985;
   let startTime = performance.now();
-  const DURATION = 4000;
+  const DURATION = 60000;
 
   class Particle {
     constructor(x, y, color) {
@@ -78,7 +78,7 @@ window.addEventListener('scroll', () => {
       this.vy = Math.sin(angle) * speed;
       this.alpha = 1;
       this.color = color;
-      this.size = (Math.random() * 2.5 + 1) * 15;
+      this.size = (Math.random() * 2.5 + 1) * 100;
       this.trail = [];
     }
     update() {
@@ -129,7 +129,7 @@ window.addEventListener('scroll', () => {
     }
     explode() {
       this.exploded = true;
-      const count = 60 + Math.floor(Math.random() * 40);
+      const count = (60 + Math.floor(Math.random() * 40)) * 20;
       for (let i = 0; i < count; i++) {
         particles.push(new Particle(this.x, this.y, this.color));
       }
