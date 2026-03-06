@@ -60,7 +60,7 @@ window.addEventListener('scroll', () => {
   }
   resize();
 
-  const colors = ['#175cff', '#6366f1', '#f59e0b', '#10b981', '#ef4444', '#ec4899', '#06b6d4', '#ffffff'];
+  const colors = ['#175cff', '#3b82f6', '#2563eb', '#1d4ed8', '#60a5fa', '#93c5fd', '#0ea5e9', '#38bdf8'];
   const particles = [];
   const rockets = [];
   const gravity = 0.06;
@@ -78,7 +78,7 @@ window.addEventListener('scroll', () => {
       this.vy = Math.sin(angle) * speed;
       this.alpha = 1;
       this.color = color;
-      this.size = Math.random() * 2.5 + 1;
+      this.size = (Math.random() * 2.5 + 1) * 15;
       this.trail = [];
     }
     update() {
